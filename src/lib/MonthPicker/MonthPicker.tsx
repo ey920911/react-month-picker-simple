@@ -1,14 +1,16 @@
 
-import React, { MouseEvent, MouseEventHandler, useCallback, useEffect, useState } from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 import { css, styled } from 'styled-components'
 
 interface IMonthPickerProps {
   handleChange: (date: Date) => void
   minYear?: number
   maxYear?: number
-
   language?: 'en' | 'ko' | 'zh' | 'ja'
   customMonth?: string[]
+  styleTheme?: 'light' | 'dark' | 'blue' | 'red' 
+  buttonStyle?: CSSProperties 
+  selectedButtonStyle?: CSSProperties
 }
 
 const months = {
@@ -24,7 +26,8 @@ const MonthPicker = (props: IMonthPickerProps) => {
     maxYear = new Date().getFullYear(),
     language = 'en',
     customMonth,
-
+    buttonStyle,
+    selectedButtonStyle,
     handleChange,
   } = props
 
@@ -46,17 +49,8 @@ const MonthPicker = (props: IMonthPickerProps) => {
   return (
     <StyledMonthPickerWrapper>
       <StyledArrowWrapper>
-        {/* <StyledArrowImg
-          src="/static/svg/ic-navi-arrow-left.svg"
-          alt="left"
-          width={25}
-          isDisabled={currentYearIdx < 1}
-          onClick={() => {
-            if (currentYearIdx > 0) setCurrentYearIdx((prev) => prev - 1)
-          }}
-        /> */}
-        <button
-          disabled={currentYearIdx < 1}
+        <StyledArrowButton
+          isClickable={currentYearIdx > 0}
           onClick={() => {
             if (currentYearIdx > 0) setCurrentYearIdx((prev) => prev - 1)
           }}
@@ -68,14 +62,14 @@ const MonthPicker = (props: IMonthPickerProps) => {
               <path fill="#3E6CDF" d="m5 8 5-5 .7.7L6.4 8l4.3 4.3-.7.7z" />
             </g>
           </svg>
-        </button>
+        </StyledArrowButton>
         <div>{yearList[currentYearIdx]}</div>
-        <button
+        <StyledArrowButton
+         isClickable={currentYearIdx + 2 <= yearList.length}
           style={{ border: 'white', backgroundColor: 'white' }}
           onClick={() => {
             if (currentYearIdx + 2 <= yearList.length) setCurrentYearIdx((prev) => prev + 1)
           }}
-          disabled={currentYearIdx + 2 > yearList.length}
         >
           <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
@@ -83,14 +77,27 @@ const MonthPicker = (props: IMonthPickerProps) => {
               <path fill="#3E6CDF" d="m11 8-5 5-.7-.7L9.6 8 5.3 3.7 6 3z" />
             </g>
           </svg>
-        </button>
+        </StyledArrowButton>
       </StyledArrowWrapper>
       <StyledMonthsWrapper>
         {monthList.map((month, index) => (
+          currentMonth === index ? 
+          <StyledSelectedMonth
+          key={`month-item-${index}`}
+          id={`${index}`}
+          style={selectedButtonStyle}
+          onClick={(e: React.MouseEvent<HTMLElement>) => {
+           const selectedMonth = parseInt(e.currentTarget.id)
+           setCurrentMonth(selectedMonth)
+           // handleChange(new Date(currentYearIdx + minYear, currentMonth))
+         }}
+        >
+          {month}
+        </StyledSelectedMonth>:
           <StyledMonth
             key={`month-item-${index}`}
             id={`${index}`}
-            isSelected={currentMonth === index}
+            style={buttonStyle}
             onClick={(e: React.MouseEvent<HTMLElement>) => {
               const selectedMonth = parseInt(e.currentTarget.id)
               setCurrentMonth(selectedMonth)
@@ -99,6 +106,7 @@ const MonthPicker = (props: IMonthPickerProps) => {
           >
             {month}
           </StyledMonth>
+          
         ))}
       </StyledMonthsWrapper>
     </StyledMonthPickerWrapper>
@@ -119,25 +127,29 @@ const StyledArrowWrapper = styled.div`
   padding: 0 0 10px 0;
 `
 
-const StyledArrowImg = styled.img<{ isDisabled?: boolean }>`
-  cursor: ${({ isDisabled }) => (isDisabled ? 'default' : 'pointer')};
-`
-
 const StyledMonthsWrapper = styled.div`
   display: flex;
-  /* margin: 0 100px; */
   flex-wrap: wrap;
 `
-const StyledMonth = styled.button<{ isSelected?: boolean }>`
-  /* font: 20px; */
-  /* background-color: gray; */
+const StyledMonth = styled.button`
   flex: 1 1 33%;
   height: 50px;
-  ${({ isSelected }) =>
-    isSelected &&
-    css`
-      background-color: #94a3b8;
-      color: white;
-      border: 1px solid gray;
-    `}
+  cursor: pointer;
+
+`
+
+const StyledSelectedMonth = styled.button`
+  flex: 1 1 33%;
+  height: 50px;
+  background-color: #cbcdd1;
+  border: 1px solid gray;
+
+
+`
+
+const StyledArrowButton = styled.button<{isClickable?:boolean}>`
+  ${({isClickable})=> isClickable && 
+  css`
+    cursor: pointer;
+  `}
 `
