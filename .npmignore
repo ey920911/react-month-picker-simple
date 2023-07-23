@@ -1,4 +1,14 @@
+.git
 node_modules/
+example-demo-app/
+package-lock.json
 src/
-public/
+.eslintignore
+.eslintrc.json
+babel.config.json
 tsconfig.json
+webpack.config.js
+.editorconfig
+.gitattributes
+.prettierrc.json
+docs/
