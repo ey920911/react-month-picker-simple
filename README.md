@@ -1,5 +1,5 @@
 
-react-month-picker-simple is simplest month picker.
+react-month-picker-simple is simplest month picker component.
 
 # Installation
 
@@ -10,11 +10,9 @@ npm install react-month-picker-simple
 
 # Simple example
 ## basic style
+<img width="319" alt="default" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/defaultStyle.png">
 
-[!initial](https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/defaultStyle.png)
-
-
-
+Example Code
 ```
 import React, { CSSProperties } from 'react';
 import MonthPicker from 'react-month-picker-simple';
@@ -30,8 +28,9 @@ export default function () {
 ```
 
 ## customize style
+<img width="319" alt="default" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/customizeStyled.png">
 
-
+Example Code
 ```
 import React, { CSSProperties } from 'react';
 import MonthPicker from 'react-month-picker-simple';
