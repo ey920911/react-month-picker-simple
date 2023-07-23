@@ -1,1 +1,1 @@
-export { default } from './MonthPicker';
+export { default } from './MonthPicker'

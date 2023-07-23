@@ -1,4 +1,3 @@
-
 react-month-picker-simple is simplest month picker component.
 
 # Installation
@@ -7,13 +6,14 @@ react-month-picker-simple is simplest month picker component.
 npm install react-month-picker-simple
 ```
 
-
 # Simple example
+
 ## basic style
 
-<img width="319" alt="basicStyle" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/defaultStyle.png"/> 
+<img width="319" alt="basicStyle" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/defaultStyle.png"/>
 
 Example Code
+
 ```
 import React, { CSSProperties } from 'react';
 import MonthPicker from 'react-month-picker-simple';
@@ -23,20 +23,22 @@ export default function () {
         <div style={{width:'300px'}}>
             <MonthPicker handleChange={(date: Date)=> {}}/>
         </div>
-    )   
+    )
 }
 
 ```
 
 ## customize style
+
 <img width="319" alt="customizeStyled" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/customizeStyled.png"/>
 
 Example Code
+
 ```
 import React, { CSSProperties } from 'react';
 import MonthPicker from 'react-month-picker-simple';
 
-const BaseButtonStyle: CSSProperties ={
+const BaseStyle: CSSProperties ={
   backgroundColor: 'blue',
   border:'1px solid white',
   color:'white'
@@ -50,9 +52,14 @@ const SelectedStyle: CSSProperties ={
 export default function () {
     return (
         <div style={{width:'300px'}}>
-            <MonthPicker language='zh' buttonStyle={BaseButtonStyle} selectedButtonStyle={SelectedStyle} handleChange={(date: Date)=> {}}/>
+             <MonthPicker
+                language="zh"
+                buttonStyle={BaseButtonStyle}
+                selectedButtonStyle={SelectedStyle}
+                handleChange={(date: any) => {}}
+            />
         </div>
-    )   
+    )
 }
 
 ```
@@ -61,13 +68,12 @@ export default function () {
 
 All props list of react-month-picker-simple.
 
-
-| Name             | Required       | Type                                             | Default                       | Description                                                                                                     |
-| ---------------- | --------------- | ------------------------------------------------ | ----------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **handleChange**     |true    | (date: Date) => void                                           | 1                             | The function to catch changed date               |
-| **minYear**       |false | number                                           | currentYear - 20                          | The value of minium year to select year                                          |
-| **maxYear**    |false | function                                         | current year                      | The value of maxium year to select year |
-| **language**        |false  | 'en', 'ko', 'zh' | 'ja'                                           | 'en'                             | The language info  |
-| **customMonth**         |false | string[]                                           | []                           | The customed month info |
-| **buttonStyle**            |false | CSSProperties |                            | The button style not selected
-| **selectedButtonStyle**      |false  | CSSProperties                                           |            | The button style that selected
+| Name                    | Required | Type                 | Default          | Description                             |
+| ----------------------- | -------- | -------------------- | ---------------- | --------------------------------------- | ----------------- |
+| **handleChange**        | true     | (date: Date) => void | 1                | The function to catch changed date      |
+| **minYear**             | false    | number               | currentYear - 20 | The value of minium year to select year |
+| **maxYear**             | false    | function             | current year     | The value of maxium year to select year |
+| **language**            | false    | 'en', 'ko', 'zh'     | 'ja'             | 'en'                                    | The language info |
+| **customMonth**         | false    | string[]             | []               | The customed month info                 |
+| **buttonStyle**         | false    | CSSProperties        |                  | The button style not selected           |
+| **selectedButtonStyle** | false    | CSSProperties        |                  | The button style that selected          |
