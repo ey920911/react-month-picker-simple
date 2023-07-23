@@ -11,7 +11,7 @@ npm install react-month-picker-simple
 # Simple example
 ## basic style
 
-<img width="319" alt="basicStyle" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/defaultStyle.png"/>
+<img width="319" alt="basicStyle" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/defaultStyle.png"/> 
 
 Example Code
 ```
@@ -30,7 +30,6 @@ export default function () {
 
 ## customize style
 <img width="319" alt="customizeStyled" src="https://github.com/ey920911/react-month-picker-simple/blob/main/docs/image/customizeStyled.png"/>
-<!-- <img width="313" alt="customizeStyled" src="https://github.com/ey920911/react-month-picker-simple/assets/7992888/8ed12787-22da-46ca-83d7-5319cdb491c5"> -->
 
 Example Code
 ```

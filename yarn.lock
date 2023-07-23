@@ -10127,10 +10127,10 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-month-picker-simple@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-month-picker-simple/-/react-month-picker-simple-0.0.1.tgz#f6fbb5060d14524d4d3b2d18ea998cf1ae2f468f"
-  integrity sha512-s9P/PXt00g8r1be6Zwe98Jf2YXh75mL3f+7nb1degenXHZNbC5zP4ZVmdRhwBRZhCikRXxANJzxbOM7C1oEdVA==
+react-month-picker-simple@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-month-picker-simple/-/react-month-picker-simple-0.0.4.tgz#e2375a0692a0b8bdac7e3b4fcaa970bdb6d7d03a"
+  integrity sha512-RzI2aGVwOri0Y+0oBBbeBmG+a/R2z5Hj3tbpVA+hdVHNzh4RyqSAlsGXzoe5o1NdSPuLatxXEzMFQjc0Ku9sXg==
   dependencies:
     "@testing-library/jest-dom" "^5.17.0"
     "@testing-library/react" "^13.4.0"
@@ -10141,7 +10141,9 @@ react-month-picker-simple@^0.0.1:
     "@types/react-dom" "^18.2.7"
     react "^18.2.0"
     react-dom "^18.2.0"
+    react-month-picker-simple "^0.0.4"
     react-scripts "5.0.1"
+    styled-components "^6.0.4"
     typescript "^4.9.5"
     web-vitals "^2.1.4"
 
