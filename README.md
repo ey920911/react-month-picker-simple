@@ -69,11 +69,11 @@ export default function () {
 All props list of react-month-picker-simple.
 
 | Name                    | Required | Type                 | Default          | Description                             |
-| ----------------------- | -------- | -------------------- | ---------------- | --------------------------------------- | ----------------- |
+| ----------------------- | -------- | -------------------- | ---------------- | --------------------------------------- |
 | **handleChange**        | true     | (date: Date) => void | 1                | The function to catch changed date      |
 | **minYear**             | false    | number               | currentYear - 20 | The value of minium year to select year |
-| **maxYear**             | false    | function             | current year     | The value of maxium year to select year |
-| **language**            | false    | 'en', 'ko', 'zh'     | 'ja'             | 'en'                                    | The language info |
-| **customMonth**         | false    | string[]             | []               | The customed month info                 |
-| **buttonStyle**         | false    | CSSProperties        |                  | The button style not selected           |
-| **selectedButtonStyle** | false    | CSSProperties        |                  | The button style that selected          |
+| **maxYear**             | false    | function             | currentYear      | The value of maxium year to select year |
+| **language**            | false    | 'en', 'ko', 'zh'     | 'en'             | The language info                       |
+| **customMonth**         | false    | string[]             | undefined        | The customed month info                 |
+| **buttonStyle**         | false    | CSSProperties        | undefined        | The button style not selected           |
+| **selectedButtonStyle** | false    | CSSProperties        | undefined        | The button style that selected          |
