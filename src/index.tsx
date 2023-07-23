@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import MonthPicker from 'react-month-picker-simple';
-import App from './MonthPicker';
-import reportWebVitals from './reportWebVitals';
+// import MonthPicker from 'react-month-picker-simple';
+import MonthPicker from './lib/MonthPicker';
+
+const baseStyleEx: CSSProperties ={
+  backgroundColor: 'blue',
+  border:'1px solid white',
+  color:'white'
+}
+
+const selectedStyleEx: CSSProperties ={
+  backgroundColor: 'white',
+  color:'black'
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <div>
-    <MonthPicker handleChange ={(date: any)=> {}}/>
-    </div>
-  </React.StrictMode>
+  <>
+  <div style={{width:'300px'}}>
+    <MonthPicker handleChange={(date: any)=> {}}/>
+  </div>
+  <div style={{width:'300px'}}>
+    <MonthPicker minYear={2020} language='ko' handleChange={(date: any)=> {}}/>
+  </div> 
+  <div style={{width:'300px'}}>
+    <MonthPicker language='zh' buttonStyle={baseStyleEx} selectedButtonStyle={selectedStyleEx} handleChange={(date: any)=> {}}/>
+  </div>
+  
+</>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
-// export {default} from './MonthPicker'
