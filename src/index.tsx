@@ -8,10 +8,4 @@ import CustomizedExample from './playground/CustomizedExample'
 
 // Playground
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(
-    <>
-        {/* <BasicExample />
-        <CustomizedExample /> */}
-        <div>test</div>
-    </>,
-)
+root.render(<App />)
