@@ -1,6 +1,6 @@
 react-month-picker-simple is simplest month picker component.
 
-# Installation
+# Installation2
 
 ```shell
 npm install react-month-picker-simple
