@@ -5,6 +5,7 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "browser": "./browser/specific/main.js",
+    "homepage": "https://ey920911.github.io/react-month-picker-simple/",
     "repository": {
         "type": "git",
         "url": "https://github.com/ey920911/react-month-picker-simple"
@@ -21,6 +22,7 @@
         "@types/node": "^16.18.38",
         "@types/react": "^18.2.15",
         "@types/react-dom": "^18.2.7",
+        "gh-pages": "^5.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-month-picker-simple": "^0.0.4",
@@ -35,7 +37,9 @@
         "eject": "react-scripts eject",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "prepare": "rm -rf dist && mkdir dist && tsc"
+        "prepare": "rm -rf dist && mkdir dist && tsc",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
