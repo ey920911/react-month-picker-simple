@@ -10,7 +10,8 @@ import CustomizedExample from './playground/CustomizedExample'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <>
-        <BasicExample />
-        <CustomizedExample />
+        {/* <BasicExample />
+        <CustomizedExample /> */}
+        <div>test</div>
     </>,
 )
