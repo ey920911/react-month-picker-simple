@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-month-picker-simple/static/js/main.3d64c7df.js",
-    "index.html": "/react-month-picker-simple/index.html",
-    "main.3d64c7df.js.map": "/react-month-picker-simple/static/js/main.3d64c7df.js.map"
+    "main.js": "/month-picker-simple/static/js/main.dc2d9960.js",
+    "index.html": "/month-picker-simple/index.html",
+    "main.dc2d9960.js.map": "/month-picker-simple/static/js/main.dc2d9960.js.map"
   },
   "entrypoints": [
-    "static/js/main.3d64c7df.js"
+    "static/js/main.dc2d9960.js"
   ]
 }
