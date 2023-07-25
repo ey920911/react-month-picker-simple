@@ -69,7 +69,7 @@ const checkJsonType = (str: string) => {
 const StyledExampleWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 30px 200px 0 200px;
+    margin-top: 30px;
 `
 
 const StyledExampleContentsWrapper = styled.div`

@@ -77,7 +77,7 @@ export default BasicExample
 const StyledExampleWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 30px 200px 0 200px;
+    /* margin: 30px 200px 0 200px; */
 `
 
 const StyledExampleContentsWrapper = styled.div`
